@@ -1,3 +1,4 @@
+# widgets/base_calculator.py
 from PySide6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QGroupBox,
                                QFormLayout, QPushButton, QTextEdit)
 from abc import ABC, abstractmethod

@@ -1,3 +1,4 @@
+# widgets/evaporation_calculator.py
 from PySide6.QtWidgets import (QDoubleSpinBox, QSpinBox, QComboBox,
                                QLabel, QHBoxLayout)
 from widgets.base_calculator import BaseCalculatorWidget

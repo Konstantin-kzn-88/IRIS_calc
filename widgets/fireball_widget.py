@@ -1,3 +1,4 @@
+# widgets/fireball_calculator.py
 from PySide6.QtWidgets import QDoubleSpinBox
 from widgets.base_calculator import BaseCalculatorWidget
 from models.Fireball.fireball import FireballCalculator, ThermalDose  # Добавляем импорт ThermalDose

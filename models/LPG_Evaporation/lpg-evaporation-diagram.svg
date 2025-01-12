@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+    <!-- Фон -->
+    <rect width="1000" height="700" fill="#f0f8ff"/>
+    
+    <!-- Заголовок -->
+    <text x="500" y="40" text-anchor="middle" font-size="24" font-weight="bold" fill="#2c3e50">
+        Процесс испарения СУГ из аварийного пролива
+    </text>
+
+    <!-- Мгновенное испарение -->
+    <g transform="translate(150,150)">
+        <path d="M0 0 Q30 -30 60 0 Q90 30 120 0" stroke="#6495ed" stroke-width="3" fill="none"/>
+        <path d="M20 10 Q50 -20 80 10" stroke="#6495ed" stroke-width="3" fill="none"/>
+        <text x="60" y="-20" text-anchor="middle" font-size="14" fill="#2c3e50">
+            Мгновенное испарение
+        </text>
+    </g>
+
+    <!-- Легенда в середине -->
+    <g transform="translate(50,220)">
+        <rect width="250" height="140" fill="white" stroke="#2c3e50" rx="5"/>
+        <text x="10" y="30" font-size="16" font-weight="bold" fill="#2c3e50">Основные процессы:</text>
+        <line x1="10" y1="50" x2="30" y2="50" stroke="#6495ed" stroke-width="3"/>
+        <text x="40" y="55" font-size="14" fill="#2c3e50">1. Мгновенное испарение (flash)</text>
+        <line x1="10" y1="80" x2="30" y2="80" stroke="#4682b4" stroke-width="3"/>
+        <text x="40" y="85" font-size="14" fill="#2c3e50">2. Испарение с поверхности</text>
+        <line x1="10" y1="110" x2="30" y2="110" stroke="#ff4500" stroke-width="3"/>
+        <text x="40" y="115" font-size="14" fill="#2c3e50">3. Теплоприток</text>
+    </g>
+
+    <!-- Испарение с поверхности -->
+    <g transform="translate(400,250)">
+        <path d="M-30 0 Q0 -30 30 0 Q60 30 90 0" stroke="#4682b4" stroke-width="3" fill="none"/>
+        <path d="M-10 20 Q20 -10 50 20" stroke="#4682b4" stroke-width="3" fill="none"/>
+        <path d="M10 40 Q40 10 70 40" stroke="#4682b4" stroke-width="3" fill="none"/>
+        <text x="30" y="-40" text-anchor="middle" font-size="14" fill="#2c3e50">
+            Испарение с поверхности
+        </text>
+    </g>
+
+    <!-- Подстилающая поверхность -->
+    <path d="M50 450 L750 450 L750 550 L50 550 Z" fill="#a0522d"/>
+    <text x="400" y="520" text-anchor="middle" font-size="16" fill="white">
+        Подстилающая поверхность (бетон/грунт)
+    </text>
+
+    <!-- Пролив СУГ -->
+    <path d="M200 440 Q400 420 600 440 L600 450 L200 450 Z" fill="#87ceeb" fill-opacity="0.6"/>
+    <text x="400" y="445" text-anchor="middle" font-size="14" fill="#2c3e50">
+        Пролив СУГ
+    </text>
+
+    <!-- Тепловой поток -->
+    <g transform="translate(600,350)">
+        <path d="M0 80 L0 0" stroke="#ff4500" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+        <path d="M-20 80 L-20 20" stroke="#ff4500" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+        <path d="M20 80 L20 20" stroke="#ff4500" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+        <text x="40" y="40" text-anchor="start" font-size="14" fill="#2c3e50">
+            Тепловой поток
+        </text>
+    </g>
+
+    <!-- Определение стрелки -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#ff4500"/>
+        </marker>
+    </defs>
+
+    <!-- Формулы справа -->
+    <g transform="translate(750,80)">
+        <rect width="230" height="500" fill="white" stroke="#2c3e50" rx="5"/>
+        
+        <!-- Заголовок -->
+        <text x="10" y="30" font-size="16" font-weight="bold" fill="#2c3e50">Математическая модель:</text>
+        
+        <!-- Мгновенное испарение -->
+        <text x="10" y="60" font-size="14" font-weight="bold" fill="#2c3e50">1. Мгновенное испарение:</text>
+        <text x="20" y="85" font-size="14" fill="#2c3e50">φ = cₚ(T₀ - Tᵦ)/L</text>
+        <text x="20" y="110" font-size="12" fill="#666666">где:</text>
+        <text x="30" y="130" font-size="12" fill="#666666">φ - доля мгновен. испарения</text>
+        <text x="30" y="150" font-size="12" fill="#666666">cₚ - теплоемкость [Дж/(кг·К)]</text>
+        <text x="30" y="170" font-size="12" fill="#666666">T₀ - начальная темп. [К]</text>
+        <text x="30" y="190" font-size="12" fill="#666666">Tᵦ - темп. кипения [К]</text>
+        
+        <!-- Тепловой поток -->
+        <text x="10" y="220" font-size="14" font-weight="bold" fill="#2c3e50">2. Тепловой поток:</text>
+        <text x="20" y="245" font-size="14" fill="#2c3e50">q = λₛ·S·(Tₛ - Tᵦ)/√(π·aₛ·t)</text>
+        <text x="20" y="270" font-size="12" fill="#666666">где:</text>
+        <text x="30" y="290" font-size="12" fill="#666666">λₛ - теплопроводность</text>
+        <text x="30" y="310" font-size="12" fill="#666666">S - площадь пролива [м²]</text>
+        <text x="30" y="330" font-size="12" fill="#666666">Tₛ - темп. поверхности [К]</text>
+        <text x="30" y="350" font-size="12" fill="#666666">aₛ - температуропроводность</text>
+        
+        <!-- Интенсивность испарения -->
+        <text x="10" y="380" font-size="14" font-weight="bold" fill="#2c3e50">3. Интенсивность испарения:</text>
+        <text x="20" y="405" font-size="14" fill="#2c3e50">W = q/(L·S)</text>
+        <text x="20" y="430" font-size="12" fill="#666666">где:</text>
+        <text x="30" y="450" font-size="12" fill="#666666">W - интенсивность [кг/(м²·с)]</text>
+        <text x="30" y="470" font-size="12" fill="#666666">L - теплота парообраз. [Дж/кг]</text>
+    </g>
+</svg>
