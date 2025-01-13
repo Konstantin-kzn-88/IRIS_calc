@@ -122,8 +122,8 @@ class LPGCalculatorWidget(BaseCalculatorWidget):
         for param, (label, value, decimals) in {
             'initial_mass': ('Начальная масса [кг]', 1000, 1),
             'spill_area': ('Площадь пролива [м²]', 100, 1),
-            'initial_temp': ('Начальная температура [K]', 273.15, 2),
-            'surface_temp': ('Температура поверхности [K]', 293.15, 2)
+            'initial_temp': ('Начальная температура [°C]', 20, 1),
+            'surface_temp': ('Температура поверхности [°C]', 20, 1)
         }.items():
             self.inputs[param] = QDoubleSpinBox()
             self.inputs[param].setRange(0, 1e6)
@@ -188,14 +188,18 @@ class LPGCalculatorWidget(BaseCalculatorWidget):
                 heat_capacity=params['surface_heat_capacity']
             )
 
+            # Конвертация температур из Цельсия в Кельвины
+            initial_temp_K = params['initial_temp'] + 273.15
+            surface_temp_K = params['surface_temp'] + 273.15
+
             # Создание модели и выполнение расчета
             model = LPGSpillEvaporation(
                 lpg=lpg,
                 surface=surface,
                 initial_mass=params['initial_mass'],
                 spill_area=params['spill_area'],
-                initial_temp=params['initial_temp'],
-                surface_temp=params['surface_temp']
+                initial_temp=initial_temp_K,
+                surface_temp=surface_temp_K
             )
 
             # Расчет на 1 час
@@ -233,8 +237,8 @@ class LPGCalculatorWidget(BaseCalculatorWidget):
                 f"Вещество: {lpg.name}\n"
                 f"Начальная масса: {params['initial_mass']:.1f} кг\n"
                 f"Площадь пролива: {params['spill_area']:.1f} м²\n"
-                f"Начальная температура: {params['initial_temp'] - 273.15:.1f}°C\n"
-                f"Температура поверхности: {params['surface_temp'] - 273.15:.1f}°C\n"
+                f"Начальная температура: {params['initial_temp']:.1f}°C\n"
+                f"Температура поверхности: {params['surface_temp']:.1f}°C\n"
                 f"Мгновенное испарение: {results['flash_fraction'] * 100:.1f}%"
             )
             ax1.text(0.98, 0.98, info_text,
