@@ -7,6 +7,7 @@ from widgets.lpg_widget import LPGCalculatorWidget
 from widgets.strait_fire_widget import StraitFireCalculatorWidget
 from widgets.scattering_widget import ScatteringCalculatorWidget
 from widgets.pipeline_widget import PipelineCalculatorWidget
+from widgets.tank_outflow_widget import TankOutflowCalculatorWidget
 from widgets.well_widget import WellCalculatorWidget
 from widgets.base_calculator import BaseCalculatorTab
 
@@ -54,6 +55,11 @@ class MainWindow(QMainWindow):
         self.tab_widget.addTab(
             BaseCalculatorTab(WellCalculatorWidget),
             "Истечение из скважины"
+        )
+
+        self.tab_widget.addTab(
+            BaseCalculatorTab(TankOutflowCalculatorWidget),
+            "Истечение из резервуара"
         )
 
 

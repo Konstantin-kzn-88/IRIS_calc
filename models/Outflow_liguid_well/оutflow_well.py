@@ -218,5 +218,5 @@ Re = params['rho'] * velocity * d / params['mu']
 
 # Создаем и сохраняем графики
 fig = plot_results(x, P, Q, d, velocity, Re, params)
-plt.savefig('well_flow_results.png', dpi=300, bbox_inches='tight')
+# plt.savefig('well_flow_results.png', dpi=300, bbox_inches='tight')
 plt.close()
