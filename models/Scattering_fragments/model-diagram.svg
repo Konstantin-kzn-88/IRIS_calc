@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+    <!-- Координатные оси -->
+    <line x1="50" y1="550" x2="750" y2="550" stroke="black" stroke-width="2"/>
+    <line x1="50" y1="550" x2="50" y2="50" stroke="black" stroke-width="2"/>
+    
+    <!-- Стрелки осей -->
+    <polygon points="745,550 750,545 745,540" fill="black"/>
+    <polygon points="50,55 45,50 55,50" fill="black"/>
+    
+    <!-- Подписи осей -->
+    <text x="760" y="555" font-size="16">x, м</text>
+    <text x="35" y="45" font-size="16">y, м</text>
+
+    <!-- Сосуд под давлением -->
+    <rect x="30" y="500" width="40" height="100" fill="none" stroke="blue" stroke-width="2"/>
+    
+    <!-- Траектории осколков -->
+    <path d="M 50 550 Q 200 300 350 550" fill="none" stroke="red" stroke-width="2" stroke-dasharray="5,5"/>
+    <path d="M 50 550 Q 300 200 550 550" fill="none" stroke="red" stroke-width="2" stroke-dasharray="5,5"/>
+    <path d="M 50 550 Q 400 100 750 550" fill="none" stroke="red" stroke-width="2" stroke-dasharray="5,5"/>
+
+    <!-- Обозначения -->
+    <circle cx="50" cy="550" r="5" fill="blue"/>
+    <text x="65" y="570" font-size="14">O (0,0)</text>
+    
+    <!-- Угол вылета -->
+    <path d="M 50 550 A 40 40 0 0 0 85 535" fill="none" stroke="green" stroke-width="1"/>
+    <text x="75" y="530" font-size="14">θ</text>
+
+    <!-- Векторы скорости -->
+    <line x1="50" y1="550" x2="100" y2="500" stroke="purple" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="110" y="495" font-size="14">U₀</text>
+
+    <!-- Определение маркера для стрелок -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="purple"/>
+        </marker>
+    </defs>
+
+    <!-- Обозначения параметров -->
+    <foreignObject x="500" y="50" width="250" height="200">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-family: Arial;">
+            <p><strong>Обозначения:</strong></p>
+            <p>U₀ - начальная скорость</p>
+            <p>θ - угол вылета</p>
+            <p>O - точка разрушения</p>
+            <p>P₀ - избыточное давление</p>
+            <p>m - масса осколка</p>
+        </div>
+    </foreignObject>
+</svg>

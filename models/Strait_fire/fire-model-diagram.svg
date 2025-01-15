@@ -1,0 +1,80 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Стиль для текста -->
+    <style>
+        .label { font-size: 14px; font-family: Arial; }
+        .formula { font-style: italic; }
+        .title { font-size: 16px; font-weight: bold; }
+    </style>
+
+    <!-- Земля/основание -->
+    <path d="M 100 450 L 700 450" stroke="#666666" stroke-width="2"/>
+    
+    <!-- Пролив -->
+    <ellipse cx="400" cy="450" rx="150" ry="20" fill="#87CEEB" stroke="#2E86C1" stroke-width="2"/>
+    
+    <!-- Пламя -->
+    <path d="M 250 450 L 300 200 L 500 200 L 550 450" 
+          fill="#FF9933" stroke="#E67E22" stroke-width="2" opacity="0.7"/>
+    
+    <!-- Центральная ось -->
+    <line x1="400" y1="450" x2="400" y2="150" 
+          stroke="#666666" stroke-width="1" stroke-dasharray="5,5"/>
+    
+    <!-- Наклонная ось пламени -->
+    <line x1="400" y1="450" x2="500" y2="200" 
+          stroke="#666666" stroke-width="1" stroke-dasharray="5,5"/>
+    
+    <!-- Угол наклона -->
+    <path d="M 400,440 A 30,30 0 0,0 430,440" 
+          fill="none" stroke="#666666" stroke-width="1"/>
+    <text x="420" y="430" class="label">θ</text>
+    
+    <!-- Длина пламени -->
+    <line x1="530" y1="450" x2="530" y2="200" 
+          stroke="#000000" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="540" y="325" class="label">L</text>
+    
+    <!-- Диаметр пролива -->
+    <line x1="250" y1="480" x2="550" y2="480" 
+          stroke="#000000" stroke-width="1" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+    <text x="375" y="500" class="label">D_eff</text>
+    
+    <!-- Расстояние до точки -->
+    <line x1="400" y1="510" x2="650" y2="510" 
+          stroke="#000000" stroke-width="1" marker-end="url(#arrow)"/>
+    <text x="500" y="530" class="label">R</text>
+    
+    <!-- Точка расчета -->
+    <circle cx="650" cy="450" r="5" fill="#E74C3C"/>
+    <text x="640" y="440" class="label">P</text>
+    
+    <!-- Параметры ветра -->
+    <line x1="100" y1="300" x2="200" y2="300" 
+          stroke="#3498DB" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="120" y="290" class="label">u (ветер)</text>
+    
+    <!-- Определения стрелок -->
+    <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3"
+                orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#000"/>
+        </marker>
+    </defs>
+    
+    <!-- Основные обозначения -->
+    <g transform="translate(50, 50)">
+        <text class="title">Основные параметры:</text>
+        <text x="0" y="30" class="label">S_spill - площадь пролива</text>
+        <text x="0" y="50" class="label">D_eff - эффективный диаметр</text>
+        <text x="0" y="70" class="label">L - длина пламени</text>
+        <text x="0" y="90" class="label">θ - угол наклона пламени</text>
+        <text x="0" y="110" class="label">u - скорость ветра</text>
+        <text x="0" y="130" class="label">R - расстояние до точки</text>
+        <text x="0" y="150" class="label">P - точка расчета</text>
+    </g>
+
+    <!-- Подпись под схемой -->
+    <text x="400" y="580" class="title" text-anchor="middle">
+        Схема расчета пожара пролива
+    </text>
+</svg>

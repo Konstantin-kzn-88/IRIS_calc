@@ -3,7 +3,9 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QTabWidget
 from widgets.evaporation_widget import EvaporationCalculatorWidget
 from widgets.fireball_widget import FireballCalculatorWidget
-from widgets.lpg_widget import LPGCalculatorWidget  # Добавляем импорт
+from widgets.lpg_widget import LPGCalculatorWidget
+from widgets.strait_fire_widget import StraitFireCalculatorWidget
+from widgets.scattering_widget import ScatteringCalculatorWidget  # Добавляем импорт
 from widgets.base_calculator import BaseCalculatorTab
 
 
@@ -31,9 +33,17 @@ class MainWindow(QMainWindow):
             BaseCalculatorTab(FireballCalculatorWidget),
             "Огненный шар"
         )
-        self.tab_widget.addTab(  # Добавляем новую вкладку
+        self.tab_widget.addTab(
             BaseCalculatorTab(LPGCalculatorWidget),
             "Испарение СУГ"
+        )
+        self.tab_widget.addTab(
+            BaseCalculatorTab(StraitFireCalculatorWidget),
+            "Пожар пролива"
+        )
+        self.tab_widget.addTab(  # Добавляем новую вкладку
+            BaseCalculatorTab(ScatteringCalculatorWidget),
+            "Разлет осколков"
         )
 
 
