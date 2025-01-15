@@ -5,7 +5,9 @@ from widgets.evaporation_widget import EvaporationCalculatorWidget
 from widgets.fireball_widget import FireballCalculatorWidget
 from widgets.lpg_widget import LPGCalculatorWidget
 from widgets.strait_fire_widget import StraitFireCalculatorWidget
-from widgets.scattering_widget import ScatteringCalculatorWidget  # Добавляем импорт
+from widgets.scattering_widget import ScatteringCalculatorWidget
+from widgets.pipeline_widget import PipelineCalculatorWidget
+from widgets.well_widget import WellCalculatorWidget
 from widgets.base_calculator import BaseCalculatorTab
 
 
@@ -41,9 +43,17 @@ class MainWindow(QMainWindow):
             BaseCalculatorTab(StraitFireCalculatorWidget),
             "Пожар пролива"
         )
-        self.tab_widget.addTab(  # Добавляем новую вкладку
+        self.tab_widget.addTab(
             BaseCalculatorTab(ScatteringCalculatorWidget),
             "Разлет осколков"
+        )
+        self.tab_widget.addTab(
+            BaseCalculatorTab(PipelineCalculatorWidget),
+            "Истечение из трубопровода"
+        )
+        self.tab_widget.addTab(
+            BaseCalculatorTab(WellCalculatorWidget),
+            "Истечение из скважины"
         )
 
 

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+    <!-- Фон -->
+    <rect width="800" height="500" fill="white"/>
+    
+    <!-- Координатная ось -->
+    <line x1="50" y1="450" x2="50" y2="50" stroke="black" stroke-width="2"/>
+    <line x1="45" y1="55" x2="50" y2="50" stroke="black" stroke-width="2"/>
+    <line x1="55" y1="55" x2="50" y2="50" stroke="black" stroke-width="2"/>
+    <text x="30" y="45" font-family="Arial" font-size="14">z</text>
+    
+    <!-- Основная труба -->
+    <path d="M100 150 H700" stroke="black" stroke-width="20" fill="none"/>
+    <path d="M100 350 H700" stroke="black" stroke-width="20" fill="none"/>
+    
+    <!-- Отверстие -->
+    <circle cx="400" cy="350" r="15" fill="white" stroke="black" stroke-width="2"/>
+    
+    <!-- Струя жидкости -->
+    <path d="M400 365 Q400 400 420 450" stroke="#4169E1" stroke-width="8" fill="none"/>
+    <path d="M392 365 Q392 395 412 445" stroke="#4169E1" stroke-width="4" fill="none" opacity="0.6"/>
+    <path d="M408 365 Q408 405 428 455" stroke="#4169E1" stroke-width="4" fill="none" opacity="0.6"/>
+    
+    <!-- Обозначения -->
+    <!-- Сечение 1 -->
+    <line x1="200" y1="140" x2="200" y2="360" stroke="red" stroke-width="1" stroke-dasharray="5,5"/>
+    <text x="180" y="130" font-family="Arial" font-size="14">1</text>
+    <text x="170" y="200" font-family="Arial" font-size="14" fill="#666">P₁, v₁</text>
+    
+    <!-- Сечение 2 -->
+    <line x1="400" y1="350" x2="400" y2="450" stroke="red" stroke-width="1" stroke-dasharray="5,5"/>
+    <text x="410" y="380" font-family="Arial" font-size="14">2</text>
+    <text x="420" y="400" font-family="Arial" font-size="14" fill="#666">P₂, v₂</text>
+    
+    <!-- Размеры -->
+    <text x="300" y="130" font-family="Arial" font-size="14">D</text>
+    <text x="420" y="340" font-family="Arial" font-size="14">d</text>
+    <text x="580" y="250" font-family="Arial" font-size="14">L</text>
+    
+    <!-- Высота -->
+    <line x1="40" y1="150" x2="60" y2="150" stroke="blue" stroke-width="1"/>
+    <line x1="40" y1="350" x2="60" y2="350" stroke="blue" stroke-width="1"/>
+    <text x="20" y="250" font-family="Arial" font-size="14" fill="blue">h</text>
+    
+    <!-- Обозначения параметров -->
+    <text x="650" y="200" font-family="Arial" font-size="12">
+        <tspan x="650" dy="0">Параметры:</tspan>
+        <tspan x="650" dy="20">P₁, P₂ - давление</tspan>
+        <tspan x="650" dy="20">v₁, v₂ - скорость</tspan>
+        <tspan x="650" dy="20">D - диаметр трубы</tspan>
+        <tspan x="650" dy="20">d - диаметр отверстия</tspan>
+        <tspan x="650" dy="20">L - длина участка</tspan>
+        <tspan x="650" dy="20">h - разница высот</tspan>
+    </text>
+    
+    <!-- Направление потока -->
+    <path d="M150 250 H250" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+        </marker>
+    </defs>
+    <text x="180" y="270" font-family="Arial" font-size="12" fill="#666">Поток</text>
+</svg>

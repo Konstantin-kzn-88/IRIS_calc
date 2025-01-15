@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800">
+  <!-- Фон -->
+  <rect width="1000" height="800" fill="white"/>
+  
+  <!-- Координатная стрелка -->
+  <line x1="50" y1="550" x2="50" y2="50" stroke="black" stroke-width="2"/>
+  <line x1="45" y1="55" x2="50" y2="50" stroke="black" stroke-width="2"/>
+  <line x1="55" y1="55" x2="50" y2="50" stroke="black" stroke-width="2"/>
+  <text x="30" y="300" font-size="16" transform="rotate(-90,30,300)">Глубина, м</text>
+  
+  <!-- Земля -->
+  <line x1="0" y1="100" x2="800" y2="100" stroke="brown" stroke-width="2"/>
+  <path d="M0,100 Q200,90 400,100 Q600,110 800,100" fill="brown"/>
+  
+  <!-- Скважина -->
+  <path d="M400,100 L650,500" stroke="#ccc" stroke-width="40" fill="none"/>
+  <path d="M400,100 L650,500" stroke="#eee" stroke-width="20" fill="none"/>
+  
+  <!-- Параметры на входе -->
+  <text x="360" y="80" font-size="16">P_atm</text>
+  <text x="420" y="140" font-size="16">d₀</text>
+  
+  <!-- Параметры на выходе -->
+  <text x="660" y="520" font-size="16">P₀</text>
+  <text x="600" y="480" font-size="16">d₁</text>
+  
+  <!-- Угол наклона -->
+  <path d="M400,100 L400,200 A100,100 0 0 1 485,185" fill="none" stroke="black" stroke-width="1"/>
+  <text x="420" y="170" font-size="16">θ</text>
+  
+  <!-- Длина -->
+  <text x="500" y="320" font-size="16">L</text>
+  
+  <!-- Параметры потока -->
+  <text x="450" y="250" font-size="14" fill="#444">Q = πd⁴ΔP/(128μΔx)</text>
+  <text x="450" y="280" font-size="14" fill="#444">Re = ρvd/μ</text>
+  <text x="450" y="310" font-size="14" fill="#444">P(x) = P₀(1-x/L) + P_atm(x/L) + ρgh·sin(θ)</text>
+  
+  <!-- Подробное описание параметров -->
+  <rect x="50" y="580" width="900" height="200" fill="#f8f8f8" stroke="#ddd"/>
+  
+  <!-- Левая колонка -->
+  <text x="60" y="600" font-size="14" font-weight="bold">Геометрические параметры:</text>
+  <text x="60" y="620" font-size="14">L - длина скважины [м]</text>
+  <text x="60" y="640" font-size="14">d₀ - диаметр на устье [м]</text>
+  <text x="60" y="660" font-size="14">d₁ - диаметр на забое [м]</text>
+  <text x="60" y="680" font-size="14">θ - угол наклона скважины [рад]</text>
+  
+  <!-- Центральная колонка -->
+  <text x="360" y="600" font-size="14" font-weight="bold">Физические параметры жидкости:</text>
+  <text x="360" y="620" font-size="14">ρ - плотность [кг/м³]</text>
+  <text x="360" y="640" font-size="14">μ - динамическая вязкость [Па·с]</text>
+  <text x="360" y="660" font-size="14">v - скорость потока [м/с]</text>
+  <text x="360" y="680" font-size="14">Q - объемный расход [м³/с]</text>
+  
+  <!-- Правая колонка -->
+  <text x="660" y="600" font-size="14" font-weight="bold">Параметры давления:</text>
+  <text x="660" y="620" font-size="14">P₀ - пластовое давление [Па]</text>
+  <text x="660" y="640" font-size="14">P_atm - атмосферное давление [Па]</text>
+  <text x="660" y="660" font-size="14">g - ускорение свободного падения [м/с²]</text>
+  <text x="660" y="680" font-size="14">Re - число Рейнольдса [безразмерное]</text>
+  
+  <!-- Диапазоны значений -->
+  <text x="60" y="720" font-size="14" font-weight="bold">Типичные значения параметров:</text>
+  <text x="60" y="740" font-size="14">P₀ = 10⁶ - 10⁷ Па</text>
+  <text x="360" y="740" font-size="14">ρ ≈ 1000 кг/м³ (вода)</text>
+  <text x="660" y="740" font-size="14">μ ≈ 0.001 Па·с (вода при 20°C)</text>
+  
+  <!-- Стрелки направления потока -->
+  <path d="M420,120 L440,140 L460,120" stroke="blue" stroke-width="2" fill="none"/>
+  <path d="M580,440 L600,460 L620,440" stroke="blue" stroke-width="2" fill="none"/>
+</svg>
