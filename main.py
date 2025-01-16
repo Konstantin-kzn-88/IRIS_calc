@@ -9,6 +9,7 @@ from widgets.scattering_widget import ScatteringCalculatorWidget
 from widgets.pipeline_widget import PipelineCalculatorWidget
 from widgets.tank_outflow_widget import TankOutflowCalculatorWidget
 from widgets.well_widget import WellCalculatorWidget
+from widgets.gas_outflow_widget import GasOutflowCalculatorWidget
 from widgets.base_calculator import BaseCalculatorTab
 
 
@@ -56,10 +57,13 @@ class MainWindow(QMainWindow):
             BaseCalculatorTab(WellCalculatorWidget),
             "Истечение из скважины"
         )
-
         self.tab_widget.addTab(
             BaseCalculatorTab(TankOutflowCalculatorWidget),
             "Истечение из резервуара"
+        )
+        self.tab_widget.addTab(
+            BaseCalculatorTab(GasOutflowCalculatorWidget),
+            "Истечение газа из трубопровода"
         )
 
 
