@@ -9,6 +9,7 @@ from widgets.explosion_widget import ExplosionCalculatorWidget
 from widgets.explosion_widget_sp import ExplosionCalculatorWidgetSP
 from widgets.fireball_widget import FireballCalculatorWidget
 from widgets.instant_destruction_widget import InstantDestructionWidget
+from widgets.jet_fire_widget import JetFireCalculatorWidget
 from widgets.lower_concentration_widget import LowerConcentrationWidget
 from widgets.lpg_widget import LPGCalculatorWidget
 from widgets.strait_fire_widget import StraitFireCalculatorWidget
@@ -87,6 +88,11 @@ class MainWindow(QMainWindow):
         self.tab_widget.addTab(
             BaseCalculatorTab(LowerConcentrationWidget),
             "Пожар-вспышка"
+        )
+
+        self.tab_widget.addTab(
+            BaseCalculatorTab(JetFireCalculatorWidget),
+            "Факельное горение"
         )
 
         self.tab_widget.addTab(
