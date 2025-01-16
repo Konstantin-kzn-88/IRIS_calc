@@ -126,7 +126,7 @@ class GasOutflowCalculatorWidget(BaseCalculatorWidget):
         self.output_text.append("-" * 50)
         self.output_text.append(f"Критическое отношение давлений: {pr_crit:.3f}")
         self.output_text.append(f"Массовый расход газа: {mass_flow:.4f} кг/с")
-        self.output_text.append(f"Объемный расход газа: {mass_flow * 3600 / gas_properties['M']:.1f} м³/ч")
+        # self.output_text.append(f"Объемный расход газа: {mass_flow * 3600 / gas_properties['M']:.1f} м³/ч")
         self.output_text.append(f"Скорость истечения: {velocity:.1f} м/с")
 
         # Построение графиков

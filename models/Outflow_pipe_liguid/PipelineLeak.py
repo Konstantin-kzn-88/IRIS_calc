@@ -143,7 +143,7 @@ def calculate_friction_factor(
             return f_new
         f = f_new
 
-    logger.warning("Достигнуто максимальное число итераций при расчете коэффициента трения")
+    # logger.warning("Достигнуто максимальное число итераций при расчете коэффициента трения")
     return f
 
 
@@ -170,7 +170,7 @@ class LeakCalculator:
         self.hole_area = math.pi * (self.leak.hole_diameter / 2) ** 2
         self.pipe_volume = self.pipe_area * self.pipe.length
 
-        logger.info(f"Инициализация расчета утечки для {fluid_type.value['name']}")
+        # logger.info(f"Инициализация расчета утечки для {fluid_type.value['name']}")
 
     def calculate_initial_state(self) -> Dict[str, float]:
         """Расчет начального состояния утечки"""
@@ -239,11 +239,11 @@ class LeakCalculator:
                 "total_energy": total_energy
             }
 
-            logger.info("Успешно рассчитано начальное состояние утечки")
+            # logger.info("Успешно рассчитано начальное состояние утечки")
             return results
 
         except Exception as e:
-            logger.error(f"Ошибка при расчете начального состояния: {str(e)}")
+            # logger.error(f"Ошибка при расчете начального состояния: {str(e)}")
             raise
 
     def calculate_time_series(
@@ -307,11 +307,11 @@ class LeakCalculator:
                         results["potential_energy"][i]
                 )
 
-            logger.info("Успешно рассчитаны временные ряды параметров утечки")
+            # logger.info("Успешно рассчитаны временные ряды параметров утечки")
             return time_array, results
 
         except Exception as e:
-            logger.error(f"Ошибка при расчете временных рядов: {str(e)}")
+            # logger.error(f"Ошибка при расчете временных рядов: {str(e)}")
             raise
 
     def plot_results(
@@ -412,10 +412,10 @@ class LeakCalculator:
             plt.savefig(save_path, dpi=300, bbox_inches='tight')
             plt.close()
 
-            logger.info(f"Графики сохранены в файл: {save_path}")
+            # logger.info(f"Графики сохранены в файл: {save_path}")
 
         except Exception as e:
-            logger.error(f"Ошибка при построении графиков: {str(e)}")
+            # logger.error(f"Ошибка при построении графиков: {str(e)}")
             raise
 
 
@@ -481,10 +481,10 @@ def create_report(
             f.write(f"Потенциальная энергия: {initial_state['potential_energy']:.1f} Дж/кг\n")
             f.write(f"Полная энергия: {initial_state['total_energy']:.1f} Дж/кг\n")
 
-        logger.info(f"Отчет сохранен в файл: {save_path}")
+        # logger.info(f"Отчет сохранен в файл: {save_path}")
 
     except Exception as e:
-        logger.error(f"Ошибка при создании отчета: {str(e)}")
+        # logger.error(f"Ошибка при создании отчета: {str(e)}")
         raise
 
 
@@ -520,8 +520,8 @@ if __name__ == "__main__":
         # Создание отчета
         create_report(calculator, initial_state, 'leak_report.txt')
 
-        logger.info("Расчет успешно завершен")
+        # logger.info("Расчет успешно завершен")
 
     except Exception as e:
-        logger.error(f"Ошибка при выполнении расчета: {str(e)}")
+        # logger.error(f"Ошибка при выполнении расчета: {str(e)}")
         raise
