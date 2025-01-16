@@ -103,7 +103,7 @@ class InstantDestructionWidget(BaseCalculatorWidget):
             self.output_text.append("Результаты расчета:")
             self.output_text.append("-" * 50)
             self.output_text.append(f"Максимальная высота волны: {max_height:.2f} м")
-            self.output_text.append(f"Время достижения максимума: {max_height_time:.2f} с")
+            # self.output_text.append(f"Время достижения максимума: {max_height_time:.2f} с")
             self.output_text.append(f"Максимальный перелив: {max_overflow:.2f}%")
 
             # Получаем параметры для построения графика
