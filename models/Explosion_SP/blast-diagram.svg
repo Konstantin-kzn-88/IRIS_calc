@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+    <!-- Фон -->
+    <rect width="800" height="600" fill="#f8f9fa"/>
+    
+    <!-- Земля -->
+    <path d="M0 500 L800 500" stroke="#666" stroke-width="2"/>
+    
+    <!-- Облако ТВС -->
+    <circle cx="400" cy="300" r="50" fill="rgba(255,165,0,0.3)" stroke="orange" stroke-width="2"/>
+    <circle cx="400" cy="300" r="5" fill="red"/>
+    
+    <!-- Зоны поражения (полуокружности) -->
+    <path d="M400 300 A150 150 0 0 1 550 300" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+    <path d="M400 300 A250 250 0 0 1 650 300" stroke="#4dabf7" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+    <path d="M400 300 A350 350 0 0 1 750 300" stroke="#40c057" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+    
+    <!-- Радиус -->
+    <line x1="400" y1="300" x2="650" y2="300" stroke="#333" stroke-width="1"/>
+    <text x="500" y="290" font-family="Arial" font-size="14">r (расстояние)</text>
+    
+    <!-- Обозначения -->
+    <g transform="translate(50, 50)">
+        <text x="0" y="0" font-family="Arial" font-size="14" font-weight="bold">Обозначения:</text>
+        
+        <!-- Центр взрыва -->
+        <circle cx="10" cy="30" r="5" fill="red"/>
+        <text x="25" y="35" font-family="Arial" font-size="14">Центр взрыва</text>
+        
+        <!-- Облако ТВС -->
+        <circle cx="10" cy="60" r="10" fill="rgba(255,165,0,0.3)" stroke="orange" stroke-width="2"/>
+        <text x="25" y="65" font-family="Arial" font-size="14">Облако ТВС</text>
+        
+        <!-- Зоны поражения -->
+        <line x1="0" y1="90" x2="20" y2="90" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="5,5"/>
+        <text x="25" y="95" font-family="Arial" font-size="14">Зона сильных разрушений (>70 кПа)</text>
+        
+        <line x1="0" y1="120" x2="20" y2="120" stroke="#4dabf7" stroke-width="2" stroke-dasharray="5,5"/>
+        <text x="25" y="125" font-family="Arial" font-size="14">Зона средних повреждений (28-70 кПа)</text>
+        
+        <line x1="0" y1="150" x2="20" y2="150" stroke="#40c057" stroke-width="2" stroke-dasharray="5,5"/>
+        <text x="25" y="155" font-family="Arial" font-size="14">Зона слабых повреждений (<14 кПа)</text>
+    </g>
+    
+    <!-- Параметры -->
+    <g transform="translate(500, 50)">
+        <text x="0" y="0" font-family="Arial" font-size="14" font-weight="bold">Параметры:</text>
+        <text x="0" y="25" font-family="Arial" font-size="14">ΔP - избыточное давление</text>
+        <text x="0" y="50" font-family="Arial" font-size="14">i - импульс волны давления</text>
+        <text x="0" y="75" font-family="Arial" font-size="14">m_пр - приведенная масса</text>
+        <text x="0" y="100" font-family="Arial" font-size="14">Qсг - теплота сгорания</text>
+        <text x="0" y="125" font-family="Arial" font-size="14">Z = 0.1 - коэф. участия</text>
+    </g>
+    
+    <!-- Формула давления -->
+    <g transform="translate(50, 400)">
+        <text x="0" y="0" font-family="Arial" font-size="14" font-weight="bold">Основная формула:</text>
+        <text x="0" y="25" font-family="Arial" font-size="14">ΔP = P₀(0.8m_пр⁰'³³/r + 3m_пр⁰'⁶⁶/r² + 5m_пр/r³)</text>
+    </g>
+</svg>

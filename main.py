@@ -2,6 +2,8 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QTabWidget
 from widgets.evaporation_widget import EvaporationCalculatorWidget
+from widgets.explosion_widget import ExplosionCalculatorWidget
+from widgets.explosion_widget_sp import ExplosionCalculatorWidgetSP
 from widgets.fireball_widget import FireballCalculatorWidget
 from widgets.lower_concentration_widget import LowerConcentrationWidget
 from widgets.lpg_widget import LPGCalculatorWidget
@@ -81,6 +83,16 @@ class MainWindow(QMainWindow):
         self.tab_widget.addTab(
             BaseCalculatorTab(LowerConcentrationWidget),
             "Пожар-вспышка"
+        )
+
+        self.tab_widget.addTab(
+            BaseCalculatorTab(ExplosionCalculatorWidget),
+            "Взрыв ТВС"
+        )
+
+        self.tab_widget.addTab(
+            BaseCalculatorTab(ExplosionCalculatorWidgetSP),
+            "Взрыв СП"
         )
 
 
