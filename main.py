@@ -5,6 +5,7 @@ from widgets.evaporation_widget import EvaporationCalculatorWidget
 from widgets.explosion_widget import ExplosionCalculatorWidget
 from widgets.explosion_widget_sp import ExplosionCalculatorWidgetSP
 from widgets.fireball_widget import FireballCalculatorWidget
+from widgets.instant_destruction_widget import InstantDestructionWidget
 from widgets.lower_concentration_widget import LowerConcentrationWidget
 from widgets.lpg_widget import LPGCalculatorWidget
 from widgets.strait_fire_widget import StraitFireCalculatorWidget
@@ -94,6 +95,12 @@ class MainWindow(QMainWindow):
             BaseCalculatorTab(ExplosionCalculatorWidgetSP),
             "Взрыв СП"
         )
+
+        self.tab_widget.addTab(
+            BaseCalculatorTab(InstantDestructionWidget),
+            "Разрушение РВС"
+        )
+
 
 
 if __name__ == '__main__':
