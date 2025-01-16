@@ -1,6 +1,9 @@
 # main.py
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QTabWidget
+
+from widgets.block_routes_widget import BlockRoutesCalculatorWidget
+from widgets.evacuation_widget import EvacuationCalculatorWidget
 from widgets.evaporation_widget import EvaporationCalculatorWidget
 from widgets.explosion_widget import ExplosionCalculatorWidget
 from widgets.explosion_widget_sp import ExplosionCalculatorWidgetSP
@@ -99,6 +102,16 @@ class MainWindow(QMainWindow):
         self.tab_widget.addTab(
             BaseCalculatorTab(InstantDestructionWidget),
             "Разрушение РВС"
+        )
+
+        self.tab_widget.addTab(
+            BaseCalculatorTab(EvacuationCalculatorWidget),
+            "Пути эвакуации"
+        )
+
+        self.tab_widget.addTab(
+            BaseCalculatorTab(BlockRoutesCalculatorWidget),
+            "Время блокирования"
         )
 
 
