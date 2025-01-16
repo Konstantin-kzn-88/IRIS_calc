@@ -1,4 +1,4 @@
-# widgets/gas_outflow_widget.py
+# widgets/gas_outflow_pipe_widget.py
 from PySide6.QtWidgets import QDoubleSpinBox, QComboBox, QLabel, QHBoxLayout
 from widgets.base_calculator import BaseCalculatorWidget
 from models.Outflow_gas_pipe.outflow_gas import GasLeakModel

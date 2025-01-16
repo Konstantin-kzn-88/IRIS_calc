@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+    <!-- Фон -->
+    <rect width="1000" height="700" fill="white"/>
+    
+    <!-- Резервуар -->
+    <rect x="100" y="100" width="400" height="300" fill="none" stroke="black" stroke-width="3"/>
+    
+    <!-- Газ в резервуаре (голубой фон) -->
+    <rect x="100" y="100" width="400" height="300" fill="#E6F3FF" opacity="0.5"/>
+    
+    <!-- Отверстие -->
+    <rect x="500" y="225" width="50" height="50" fill="white" stroke="black" stroke-width="3"/>
+    
+    <!-- Истечение газа -->
+    <path d="M 550 250 C 600 250, 650 200, 700 200 
+             M 550 250 C 600 250, 650 250, 700 250
+             M 550 250 C 600 250, 650 300, 700 300" 
+          fill="none" stroke="#87CEEB" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Параметры в резервуаре -->
+    <text x="250" y="200" text-anchor="middle" font-family="Arial" font-size="24" fill="black">P(t), T(t)</text>
+    <text x="250" y="240" text-anchor="middle" font-family="Arial" font-size="24" fill="black">m(t), V</text>
+    
+    <!-- Обозначение отверстия -->
+    <text x="525" y="300" text-anchor="middle" font-family="Arial" font-size="20" fill="black">D</text>
+    
+    <!-- Атмосферное давление -->
+    <text x="650" y="180" text-anchor="middle" font-family="Arial" font-size="20" fill="black">P_a</text>
+    
+    <!-- Массовый расход -->
+    <text x="620" y="250" text-anchor="middle" font-family="Arial" font-size="24" fill="black">ṁ</text>
+    
+    <!-- Адиабатический процесс -->
+    <text x="180" y="150" text-anchor="start" font-family="Arial" font-size="20" fill="black">PV^γ = const</text>
+    
+    <!-- Уравнение состояния -->
+    <text x="150" y="350" text-anchor="start" font-family="Arial" font-size="20" fill="black">PV = mRT</text>
+
+    <!-- Границы раздела -->
+    <path d="M 500 225 L 500 275" stroke="red" stroke-width="2"/>
+    <text x="480" y="260" text-anchor="end" font-family="Arial" font-size="16" fill="red">Сечение</text>
+
+    <!-- Пояснения -->
+    <rect x="50" y="420" width="900" height="260" fill="none" stroke="black" stroke-width="1"/>
+    
+    <!-- Заголовок пояснений -->
+    <text x="60" y="450" font-family="Arial" font-size="20" font-weight="bold">Обозначения:</text>
+    
+    <!-- Основные параметры -->
+    <text x="60" y="480" font-family="Arial" font-size="16">P(t) - давление газа в резервуаре [Па]</text>
+    <text x="60" y="505" font-family="Arial" font-size="16">T(t) - температура газа в резервуаре [К]</text>
+    <text x="60" y="530" font-family="Arial" font-size="16">m(t) - масса газа в резервуаре [кг]</text>
+    <text x="60" y="555" font-family="Arial" font-size="16">V - объем резервуара [м³]</text>
+    <text x="60" y="580" font-family="Arial" font-size="16">D - диаметр отверстия истечения [м]</text>
+    <text x="60" y="605" font-family="Arial" font-size="16">P_a - атмосферное давление [Па]</text>
+    <text x="60" y="630" font-family="Arial" font-size="16">ṁ - массовый расход газа [кг/с]</text>
+    
+    <!-- Дополнительные параметры -->
+    <text x="450" y="480" font-family="Arial" font-size="16">γ (gamma) - показатель адиабаты газа [-]</text>
+    <text x="450" y="505" font-family="Arial" font-size="16">R - газовая постоянная [Дж/(кг·К)]</text>
+    <text x="450" y="530" font-family="Arial" font-size="16">PV^γ = const - уравнение адиабатического процесса</text>
+    <text x="450" y="555" font-family="Arial" font-size="16">PV = mRT - уравнение состояния идеального газа</text>
+    <text x="450" y="580" font-family="Arial" font-size="16">Пунктирные линии - направление истечения газа</text>
+    <text x="450" y="605" font-family="Arial" font-size="16">Красная линия - критическое сечение истечения</text>
+    <text x="450" y="630" font-family="Arial" font-size="16">Голубая заливка - газ в резервуаре</text>
+
+</svg>
