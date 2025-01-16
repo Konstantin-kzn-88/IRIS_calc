@@ -1,0 +1,1 @@
+C:\python\IRIS_Calc\venv\Scripts\python.exe main.py

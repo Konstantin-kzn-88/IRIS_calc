@@ -1,5 +1,9 @@
 # main.py
+import os
 import sys
+from pathlib import Path
+
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMainWindow, QTabWidget
 
 from widgets.block_routes_widget import BlockRoutesCalculatorWidget
@@ -27,9 +31,16 @@ class MainWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Расчет аварийных ситуаций")
+        self.setWindowTitle("IRIS_calc")
         self.setGeometry(100, 100, 1200, 800)
+        self.__set_ico()
+        self.path_ico = str(Path(os.getcwd()))
         self.setup_ui()
+
+    def __set_ico(self):
+        main_ico = QIcon('main_ico.ico')
+        self.setWindowIcon(main_ico)
+
 
     def setup_ui(self):
         """Настройка интерфейса главного окна"""
