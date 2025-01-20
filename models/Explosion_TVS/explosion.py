@@ -188,7 +188,7 @@ class TVSExplosion:
         target_pressure = target_pressure_kpa * 1000
 
         r_min = 1.0
-        r_max = 3000.0
+        r_max = 5000.0
         max_iterations = 100
         iteration = 0
 

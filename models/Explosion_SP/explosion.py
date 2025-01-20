@@ -27,7 +27,12 @@ def calculate_probit(delta_P: float, impulse: float) -> float:
     # Переводим кПа в Па
     delta_P_pa = delta_P * 1000
     V = (17500 / delta_P_pa) ** 8.4 + (290 / impulse) ** 9.3
-    return 5 - 0.26 * math.log(V)
+    if (5 - 0.26 * math.log(V)) > 8.09:
+        return 8.09
+    elif (5 - 0.26 * math.log(V)) < 0.01:
+        return 0.01
+    else:
+        return 5 - 0.26 * math.log(V)
 
 
 def calculate_probability(probit: float) -> float:

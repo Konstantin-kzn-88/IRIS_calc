@@ -20,6 +20,8 @@ from widgets.strait_fire_widget import StraitFireCalculatorWidget
 from widgets.scattering_widget import ScatteringCalculatorWidget
 from widgets.pipeline_widget import PipelineCalculatorWidget
 from widgets.tank_outflow_widget import TankOutflowCalculatorWidget
+from widgets.toxic_heavy_gas_widget import ToxicDispersionCalculatorWidget
+from widgets.toxic_widget import ToxicCalculatorWidget
 from widgets.well_widget import WellCalculatorWidget
 from widgets.gas_outflow_pipe_widget import GasOutflowCalculatorWidget
 from widgets.gas_outflow_tank_widget import TankGasOutflowCalculatorWidget
@@ -119,6 +121,16 @@ class MainWindow(QMainWindow):
         self.tab_widget.addTab(
             BaseCalculatorTab(InstantDestructionWidget),
             "Разрушение РВС"
+        )
+
+        self.tab_widget.addTab(
+            BaseCalculatorTab(ToxicCalculatorWidget),
+            "ТОКСИ-2 (мод.)"
+        )
+
+        self.tab_widget.addTab(
+            BaseCalculatorTab(ToxicDispersionCalculatorWidget),
+            "ТОКСИ-3 (мод.)"
         )
 
         self.tab_widget.addTab(
