@@ -39,7 +39,7 @@ class GasOutflowCalculatorWidget(BaseCalculatorWidget):
         self.gas_combo.addItem("Выберите тип газа...")
         for preset_id, preset_data in self.GAS_PRESETS.items():
             self.gas_combo.addItem(preset_data['name'], preset_id)
-        self.gas_combo.currentIndexChanged.connect(self.on_value_changed)
+        self.gas_combo.currentIndexChanged.connect(self.on_gas_changed)
         gas_layout.addWidget(gas_label)
         gas_layout.addWidget(self.gas_combo)
         gas_layout.addStretch()
@@ -90,6 +90,11 @@ class GasOutflowCalculatorWidget(BaseCalculatorWidget):
     def get_params(self):
         """Получение параметров из полей ввода"""
         return {key: widget.value() for key, widget in self.inputs.items()}
+
+    def on_gas_changed(self, index):
+        """Обработчик изменения типа газа"""
+        self.apply_gas_preset(index)
+        self.on_value_changed()
 
     def on_value_changed(self):
         """Обработчик изменения значений в полях ввода"""

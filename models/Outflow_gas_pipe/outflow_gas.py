@@ -26,44 +26,36 @@ class GasLeakModel:
         # Перевод температуры из °C в K
         self.T = gas_properties['T_C'] + 273.15
         self.M = gas_properties['M']
+        self.z = gas_properties.get('z', 1.0)  # коэффициент сжимаемости
 
     def critical_pressure_ratio(self):
         """Расчет критического отношения давлений"""
         return (2 / (self.k + 1)) ** (self.k / (self.k - 1))
 
-    def mass_flow_rate(self, P1_MPa, D_mm, discharge_coef=0.61):
-        """
-        Расчет массового расхода газа через отверстие
+    def get_gas_density(self, P_MPa):
+        """Расчет плотности газа"""
+        P = P_MPa * 1e6  # Па
+        return (P) / (self.z * self.R * self.T)
 
-        Parameters:
-        P1_MPa (float): Давление в трубе [МПа]
-        D_mm (float): Диаметр отверстия [мм]
-        discharge_coef (float): Коэффициент истечения
-
-        Returns:
-        float: Массовый расход [кг/с]
-        """
-        # Конвертация давления в Па и диаметра в м
-        P1 = P1_MPa * 1e6
+    def mass_flow_rate(self, P1_MPa, D_mm, discharge_coef=0.8):
+        """Расчет массового расхода газа"""
+        P1 = P1_MPa * 1e6 - P_ATM  # избыточное давление
         D_m = D_mm / 1000.0
-        P2 = P_ATM
-
         A = np.pi * (D_m / 2) ** 2
 
+        density = self.get_gas_density(P1_MPa)
+        print('density',density)
         pr_crit = self.critical_pressure_ratio()
-        pr = P2 / P1
+        pr = P_ATM / (P1 + P_ATM)
 
-        if pr <= pr_crit:  # Критическое истечение
-            pr = pr_crit
+        if pr >= pr_crit:  # докритическое
+            flow_rate = discharge_coef * A * (P1 * density * (2 * self.k / (self.k - 1)) *
+                                              (pr ** (2 / self.k)) * (1 - pr ** ((self.k - 1) / self.k))) ** (1 / 2)
+        else:  # сверхкритическое
+            flow_rate = discharge_coef * A * ((P1 * density * self.k *
+                                               ((2 / (self.k + 1)) ** ((self.k + 1) / (self.k - 1)))) ** (1 / 2))
 
-        # Формула для расчета массового расхода
-        if pr < 1:  # Проверка физического смысла
-            term1 = 2 * self.k / (self.k - 1)
-            term2 = (pr ** (2 / self.k) - pr ** ((self.k + 1) / self.k))
-            G = discharge_coef * A * np.sqrt(self.k * P1 * self.R * self.T * term1 * term2)
-            return G
-        else:
-            return 0
+        return flow_rate
 
     def velocity(self, P1_MPa):
         """
