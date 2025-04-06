@@ -56,7 +56,7 @@ class StraitFireCalculatorWidget(BaseCalculatorWidget):
             'wind_velocity': ('Скорость ветра [м/с]', 1, 1),
         }.items():
             self.inputs[param] = QDoubleSpinBox()
-            self.inputs[param].setRange(0.001, 10000)
+            self.inputs[param].setRange(0.001, 50000)
             self.inputs[param].setValue(value)
             self.inputs[param].setDecimals(decimals)
             self.input_layout.addRow(label, self.inputs[param])
