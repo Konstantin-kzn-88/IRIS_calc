@@ -56,7 +56,7 @@ class LowerConcentrationWidget(BaseCalculatorWidget):
             'lower_concentration': ('Нижний концентрационный предел [% об.]', 1.1, 2),
         }.items():
             self.inputs[param] = QDoubleSpinBox()
-            self.inputs[param].setRange(0.01, 1000.0)
+            self.inputs[param].setRange(0.01, 50000.0)
             self.inputs[param].setValue(value)
             self.inputs[param].setDecimals(decimals)
             self.input_layout.addRow(label, self.inputs[param])
